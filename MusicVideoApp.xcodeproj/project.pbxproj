@@ -54,14 +54,46 @@
 		0EBE18D11CB7858C009461FF /* MusicVideoApp */ = {
 			isa = PBXGroup;
 			children = (
-				0EBE18D21CB7858C009461FF /* AppDelegate.swift */,
-				0EBE18D41CB7858C009461FF /* ViewController.swift */,
-				0EBE18D61CB7858C009461FF /* Main.storyboard */,
-				0EBE18D91CB7858C009461FF /* Assets.xcassets */,
-				0EBE18DB1CB7858C009461FF /* LaunchScreen.storyboard */,
-				0EBE18DE1CB7858C009461FF /* Info.plist */,
+				0EBE18E71CB78B8B009461FF /* View */,
+				0EBE18E61CB78B73009461FF /* Supporting Files */,
+				0EBE18E41CB78B03009461FF /* Model */,
+				0EBE18E51CB78B6A009461FF /* Controller */,
 			);
 			path = MusicVideoApp;
+			sourceTree = "<group>";
+		};
+		0EBE18E41CB78B03009461FF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		0EBE18E51CB78B6A009461FF /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				0EBE18D41CB7858C009461FF /* ViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		0EBE18E61CB78B73009461FF /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				0EBE18D21CB7858C009461FF /* AppDelegate.swift */,
+				0EBE18D91CB7858C009461FF /* Assets.xcassets */,
+				0EBE18DE1CB7858C009461FF /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		0EBE18E71CB78B8B009461FF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0EBE18D61CB7858C009461FF /* Main.storyboard */,
+				0EBE18DB1CB7858C009461FF /* LaunchScreen.storyboard */,
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -96,6 +128,7 @@
 				TargetAttributes = {
 					0EBE18CE1CB7858C009461FF = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = 29ZZ8WZT2D;
 					};
 				};
 			};
@@ -249,10 +282,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = MusicVideoApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = trainning.LXP.MusicVideoApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -260,10 +296,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = MusicVideoApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = trainning.LXP.MusicVideoApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
