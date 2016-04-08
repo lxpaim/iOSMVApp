@@ -12,6 +12,7 @@
 		0EBE18D81CB7858C009461FF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0EBE18D61CB7858C009461FF /* Main.storyboard */; };
 		0EBE18DA1CB7858C009461FF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0EBE18D91CB7858C009461FF /* Assets.xcassets */; };
 		0EBE18DD1CB7858C009461FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0EBE18DB1CB7858C009461FF /* LaunchScreen.storyboard */; };
+		0EBE18E91CB791E3009461FF /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EBE18E81CB791E3009461FF /* APIManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		0EBE18D91CB7858C009461FF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0EBE18DC1CB7858C009461FF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0EBE18DE1CB7858C009461FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0EBE18E81CB791E3009461FF /* APIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,9 +56,9 @@
 		0EBE18D11CB7858C009461FF /* MusicVideoApp */ = {
 			isa = PBXGroup;
 			children = (
-				0EBE18E71CB78B8B009461FF /* View */,
 				0EBE18E61CB78B73009461FF /* Supporting Files */,
 				0EBE18E41CB78B03009461FF /* Model */,
+				0EBE18E71CB78B8B009461FF /* View */,
 				0EBE18E51CB78B6A009461FF /* Controller */,
 			);
 			path = MusicVideoApp;
@@ -65,6 +67,7 @@
 		0EBE18E41CB78B03009461FF /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				0EBE18E81CB791E3009461FF /* APIManager.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -168,6 +171,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0EBE18E91CB791E3009461FF /* APIManager.swift in Sources */,
 				0EBE18D51CB7858C009461FF /* ViewController.swift in Sources */,
 				0EBE18D31CB7858C009461FF /* AppDelegate.swift in Sources */,
 			);
