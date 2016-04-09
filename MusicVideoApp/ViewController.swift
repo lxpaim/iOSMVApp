@@ -25,16 +25,11 @@ class ViewController: UIViewController {
     }
     
     //Methods
-    func didLoadData(result:String){
-        let alert = UIAlertController(title: result, message: nil, preferredStyle: .Alert)
-        let okAction = UIAlertAction (title: "Ok", style: .Default){
-            action -> Void in
-            
+    func didLoadData(videos: [Videos]){
+        for video in videos {
+            print("Videos in Top Ten \(video.vName)")
         }
-        alert.addAction(okAction)
-        self.presentViewController(alert, animated: true, completion:nil)
     }
-
 
 }
 
