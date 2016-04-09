@@ -26,6 +26,7 @@ class ViewController: UIViewController {
     
     //Methods
     func didLoadData(videos: [Videos]){
+        print(reachabilityStatus)
         for video in videos {
             print("Videos in Top Ten \(video.vName)")
         }
