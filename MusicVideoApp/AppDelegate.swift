@@ -26,12 +26,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Create a new observer for reachability changes
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(AppDelegate.reachabilityChanged(_:)), name: kReachabilityChangedNotification , object: nil)
         
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(AppDelegate.preferredFontChange), name: UIContentSizeCategoryDidChangeNotification , object: nil)
+        
         // Register for changes in reachablity
         internetCheck = Reachability.reachabilityForInternetConnection()
         internetCheck?.startNotifier()
         statusChangedForReachability(internetCheck!)
         
          return true
+    }
+    
+    func preferredFontChange() {
+        print("The preferred font changed")
     }
     
     func reachabilityChanged(notification: NSNotification) {
@@ -78,6 +84,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // Removed observer for reachability
         NSNotificationCenter.defaultCenter().removeObserver(self, name: kReachabilityChangedNotification, object: nil)
+        NSNotificationCenter.defaultCenter().removeObserver(self,name: UIContentSizeCategoryDidChangeNotification , object: nil)
     }
 
 
