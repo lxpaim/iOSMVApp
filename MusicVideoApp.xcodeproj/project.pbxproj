@@ -17,6 +17,7 @@
 		0EBE18EE1CB7A8B3009461FF /* MusicVideo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EBE18ED1CB7A8B3009461FF /* MusicVideo.swift */; };
 		0EBE18F31CB996DA009461FF /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EBE18F21CB996DA009461FF /* Reachability.m */; };
 		0EBE18F71CB9DCB8009461FF /* MusicVideoTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EBE18F61CB9DCB8009461FF /* MusicVideoTVC.swift */; };
+		0EBE18F91CB9FC44009461FF /* MusicVideoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EBE18F81CB9FC44009461FF /* MusicVideoTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		0EBE18F11CB996DA009461FF /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		0EBE18F21CB996DA009461FF /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		0EBE18F61CB9DCB8009461FF /* MusicVideoTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicVideoTVC.swift; sourceTree = "<group>"; };
+		0EBE18F81CB9FC44009461FF /* MusicVideoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicVideoTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +92,7 @@
 			children = (
 				0EBE18D41CB7858C009461FF /* ViewController.swift */,
 				0EBE18F61CB9DCB8009461FF /* MusicVideoTVC.swift */,
+				0EBE18F81CB9FC44009461FF /* MusicVideoTableViewCell.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -206,6 +209,7 @@
 				0EBE18E91CB791E3009461FF /* APIManager.swift in Sources */,
 				0EBE18D51CB7858C009461FF /* ViewController.swift in Sources */,
 				0EBE18EE1CB7A8B3009461FF /* MusicVideo.swift in Sources */,
+				0EBE18F91CB9FC44009461FF /* MusicVideoTableViewCell.swift in Sources */,
 				0EBE18D31CB7858C009461FF /* AppDelegate.swift in Sources */,
 				0EBE18F31CB996DA009461FF /* Reachability.m in Sources */,
 				0EBE18EB1CB7A7BC009461FF /* Constants.swift in Sources */,
