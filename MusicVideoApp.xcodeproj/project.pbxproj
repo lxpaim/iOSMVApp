@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0E8345431CBA311B00127B70 /* MusicVideoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8345421CBA311B00127B70 /* MusicVideoVC.swift */; };
 		0EBE18D31CB7858C009461FF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EBE18D21CB7858C009461FF /* AppDelegate.swift */; };
 		0EBE18D51CB7858C009461FF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EBE18D41CB7858C009461FF /* ViewController.swift */; };
 		0EBE18D81CB7858C009461FF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0EBE18D61CB7858C009461FF /* Main.storyboard */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0E8345421CBA311B00127B70 /* MusicVideoVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicVideoVC.swift; sourceTree = "<group>"; };
 		0EBE18CF1CB7858C009461FF /* MusicVideoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MusicVideoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0EBE18D21CB7858C009461FF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0EBE18D41CB7858C009461FF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -93,6 +95,7 @@
 				0EBE18D41CB7858C009461FF /* ViewController.swift */,
 				0EBE18F61CB9DCB8009461FF /* MusicVideoTVC.swift */,
 				0EBE18F81CB9FC44009461FF /* MusicVideoTableViewCell.swift */,
+				0E8345421CBA311B00127B70 /* MusicVideoVC.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -207,6 +210,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0EBE18E91CB791E3009461FF /* APIManager.swift in Sources */,
+				0E8345431CBA311B00127B70 /* MusicVideoVC.swift in Sources */,
 				0EBE18D51CB7858C009461FF /* ViewController.swift in Sources */,
 				0EBE18EE1CB7A8B3009461FF /* MusicVideo.swift in Sources */,
 				0EBE18F91CB9FC44009461FF /* MusicVideoTableViewCell.swift in Sources */,
@@ -374,6 +378,7 @@
 				0EBE18E31CB7858C009461FF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

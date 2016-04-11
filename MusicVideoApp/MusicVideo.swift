@@ -39,6 +39,19 @@ class Videos {
         return _vVideoUrl
     }
     
+    var vGenre: String {
+        return _vGenre
+    }
+    
+    var vRights: String {
+        return _vRights
+    }
+    
+    var vPrice: String {
+        return _vPrice
+    }
+  
+    
     init(data: JSONDictionary){
         
         // Video name
