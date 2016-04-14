@@ -43,6 +43,14 @@ class SettingsVC: UITableViewController {
     
     @IBOutlet weak var sliderCnt: UISlider!
     
+    
+    @IBAction func countValueChanged(sender: AnyObject) {
+        let defaults = NSUserDefaults.standardUserDefaults()
+        defaults.setObject(Int(sliderCnt.value), forKey: "APICNT")
+        APICnt.text = ("\(sliderCnt.value)")
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -60,6 +68,12 @@ class SettingsVC: UITableViewController {
         //Fetch values from NSUserDefaults
         
         touchID.on = NSUserDefaults.standardUserDefaults().boolForKey("SecSetting")
+        
+        if (NSUserDefaults.standardUserDefaults().objectForKey("APICNT") != nil){
+            let countValue = NSUserDefaults.standardUserDefaults().objectForKey("APICNT") as! Int
+            APICnt.text = ("\(countValue)")
+            sliderCnt.value = Float(countValue)
+        }
         
         
       

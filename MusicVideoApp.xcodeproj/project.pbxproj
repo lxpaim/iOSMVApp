@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0E49B42C1CBDD88700F9B05A /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E49B42B1CBDD88700F9B05A /* SettingsVC.swift */; };
+		0E49B42E1CBF17CB00F9B05A /* AboutVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E49B42D1CBF17CB00F9B05A /* AboutVC.swift */; };
 		0E8345431CBA311B00127B70 /* MusicVideoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8345421CBA311B00127B70 /* MusicVideoVC.swift */; };
 		0EBE18D31CB7858C009461FF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EBE18D21CB7858C009461FF /* AppDelegate.swift */; };
 		0EBE18D51CB7858C009461FF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EBE18D41CB7858C009461FF /* ViewController.swift */; };
@@ -24,6 +25,7 @@
 
 /* Begin PBXFileReference section */
 		0E49B42B1CBDD88700F9B05A /* SettingsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
+		0E49B42D1CBF17CB00F9B05A /* AboutVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutVC.swift; sourceTree = "<group>"; };
 		0E8345421CBA311B00127B70 /* MusicVideoVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicVideoVC.swift; sourceTree = "<group>"; };
 		0EBE18CF1CB7858C009461FF /* MusicVideoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MusicVideoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0EBE18D21CB7858C009461FF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -99,6 +101,7 @@
 				0EBE18F81CB9FC44009461FF /* MusicVideoTableViewCell.swift */,
 				0E8345421CBA311B00127B70 /* MusicVideoVC.swift */,
 				0E49B42B1CBDD88700F9B05A /* SettingsVC.swift */,
+				0E49B42D1CBF17CB00F9B05A /* AboutVC.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -221,6 +224,7 @@
 				0EBE18F31CB996DA009461FF /* Reachability.m in Sources */,
 				0EBE18EB1CB7A7BC009461FF /* Constants.swift in Sources */,
 				0EBE18F71CB9DCB8009461FF /* MusicVideoTVC.swift in Sources */,
+				0E49B42E1CBF17CB00F9B05A /* AboutVC.swift in Sources */,
 				0E49B42C1CBDD88700F9B05A /* SettingsVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
