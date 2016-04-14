@@ -73,10 +73,12 @@ class SettingsVC: UITableViewController {
             let countValue = NSUserDefaults.standardUserDefaults().objectForKey("APICNT") as! Int
             APICnt.text = ("\(countValue)")
             sliderCnt.value = Float(countValue)
+        }else{
+            sliderCnt.value = 10.0
+            APICnt.text = ("\(Int(sliderCnt.value))")
         }
         
-        
-      
+              
     }
     
     func preferredFontChange() {
