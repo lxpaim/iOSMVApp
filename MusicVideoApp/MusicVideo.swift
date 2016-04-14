@@ -72,7 +72,7 @@ class Videos {
         }
         
         // Link to 30s preview
-        if let video = data["im:link"] as? JSONArray,
+        if let video = data["link"] as? JSONArray,
             vUrl = video[1] as? JSONDictionary,
             vHref = vUrl["attributes"] as? JSONDictionary,
             vVideoUrl = vHref["href"] as? String {
