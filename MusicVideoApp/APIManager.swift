@@ -9,6 +9,7 @@
 import Foundation
 
 class APIManager {
+    
     func loadData(urlString:String ,completion: [Videos]-> Void){
         
         let config = NSURLSessionConfiguration.ephemeralSessionConfiguration()

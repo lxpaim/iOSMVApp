@@ -50,6 +50,12 @@ class Videos {
     var vPrice: String {
         return _vPrice
     }
+    var vArtist: String {
+        return _vArtist
+    }
+    var vLinkiTunes: String {
+        return _vLinkToItunes
+    }
   
     
     init(data: JSONDictionary){

@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import MessageUI
 
-class SettingsVC: UITableViewController {
+class SettingsVC: UITableViewController , MFMailComposeViewControllerDelegate{
     
     @IBOutlet weak var aboutDisplay: UILabel!
     
@@ -90,6 +91,7 @@ class SettingsVC: UITableViewController {
         APICnt.font = UIFont.preferredFontForTextStyle(UIFontTextStyleSubheadline)        
 
     }
+    
     
     deinit{
         NSNotificationCenter.defaultCenter().removeObserver(self, name: UIContentSizeCategoryDidChangeNotification, object: nil)
