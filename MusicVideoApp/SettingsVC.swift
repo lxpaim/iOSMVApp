@@ -9,7 +9,7 @@
 import UIKit
 import MessageUI
 
-class SettingsVC: UITableViewController , MFMailComposeViewControllerDelegate{
+class SettingsVC: UITableViewController , MFMailComposeViewControllerDelegate {
     
     @IBOutlet weak var aboutDisplay: UILabel!
     
@@ -91,8 +91,54 @@ class SettingsVC: UITableViewController , MFMailComposeViewControllerDelegate{
         APICnt.font = UIFont.preferredFontForTextStyle(UIFontTextStyleSubheadline)        
 
     }
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        if indexPath.section == 0 && indexPath.row == 1 {
+            let mailComposeViewController = configureMail()
+            if MFMailComposeViewController.canSendMail() {
+                self.presentViewController(mailComposeViewController, animated: true, completion: nil)
+            }else{
+                mailAlert()
+            }
+            tableView.deselectRowAtIndexPath(indexPath, animated: false)
+        }
+    }
     
+    func configureMail()->MFMailComposeViewController{
+        let mailComposeVC = MFMailComposeViewController()
+        mailComposeVC.mailComposeDelegate = self
+        mailComposeVC.setToRecipients(["jamie.maddrox.multiple@gmail.com"])
+        mailComposeVC.setSubject("MVA App Feedback")
+        mailComposeVC.setMessageBody("Hi Jamie, \n\n I would like to share the following feedback...", isHTML: false)
+        
+        return mailComposeVC
     
+    }
+    
+    func  mailAlert(){
+    let alertVC:UIAlertController = UIAlertController(title: "No account", message: "Device has no configured mail account", preferredStyle: .Alert)
+        let okAction: UIAlertAction = UIAlertAction(title: "Ok", style: .Default){ action -> Void  in }
+    
+        alertVC.addAction(okAction)
+        self.presentViewController(alertVC, animated: true, completion: nil)
+
+    }
+    
+    func mailComposeController(controller: MFMailComposeViewController, didFinishWithResult result: MFMailComposeResult, error: NSError?) {
+        switch result.rawValue {
+        case MFMailComposeResultCancelled.rawValue:
+            print("Mail cancelled")
+        case MFMailComposeResultSent.rawValue:
+            print("Mail Sent")
+        case MFMailComposeResultFailed.rawValue:
+            print("Mail Failed")
+        case MFMailComposeResultSaved.rawValue:
+            print("Mail Saved")
+        default:
+            print("Unknown issue")
+        }
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+
     deinit{
         NSNotificationCenter.defaultCenter().removeObserver(self, name: UIContentSizeCategoryDidChangeNotification, object: nil)
     }
