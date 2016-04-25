@@ -12,6 +12,10 @@ class MusicVideoTVC: UITableViewController {
 
     var videos = [Videos]()
     
+    var filteredArray = [Videos]()
+    
+    let resultSearchController = UISearchController(searchResultsController: nil)
+    
     var limit = 10
     
     override func viewDidLoad() {
@@ -42,6 +46,20 @@ class MusicVideoTVC: UITableViewController {
         navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.redColor()]
         
         title = "iTunes Top \(limit) Music Video"
+        
+        // resultSearchController.searchResultsUpdater = self
+        
+        definesPresentationContext = true
+        
+        //Make nbackground opaque when searching
+        resultSearchController.dimsBackgroundDuringPresentation = false
+        
+        resultSearchController.searchBar.placeholder = "Search for artist"
+        
+        resultSearchController.searchBar.searchBarStyle = UISearchBarStyle.Prominent
+        
+        tableView.tableHeaderView = resultSearchController.searchBar
+        
         
         tableView.reloadData()
     }
@@ -131,7 +149,9 @@ class MusicVideoTVC: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
+        if resultSearchController.active{
+                return filteredArray.count
+        }
         return videos.count
     }
 
@@ -144,48 +164,15 @@ class MusicVideoTVC: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCellWithIdentifier(storyboard.cellReuseIdentifier, forIndexPath: indexPath) as! MusicVideoTableViewCell
-
-        cell.video = videos[indexPath.row]
-                
+        
+        if resultSearchController.active{
+            cell.video = filteredArray[indexPath.row]
+        }else{
+            cell.video = videos[indexPath.row]
+        }
         return cell
     }
     
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
 
     // MARK: - Navigation
 
@@ -193,10 +180,21 @@ class MusicVideoTVC: UITableViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
 
         if segue.identifier == storyboard.segueUIdentifier {
+            
             if let indexpath = tableView.indexPathForSelectedRow {
-                let video = videos[indexpath.row]
-                let dvc = segue.destinationViewController as! MusicVideoVC
                 
+                let video: Videos
+                
+                if resultSearchController.active {
+                    
+                    video = filteredArray[indexpath.row]
+                    
+                } else {
+                    
+                    video = videos[indexpath.row]
+                }
+                
+                let dvc = segue.destinationViewController as! MusicVideoVC
                 dvc.videos = video
             }
         }
