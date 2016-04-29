@@ -47,7 +47,7 @@ class MusicVideoTVC: UITableViewController {
         
         title = "iTunes Top \(limit) Music Video"
         
-        // resultSearchController.searchResultsUpdater = self
+        resultSearchController.searchResultsUpdater = self
         
         definesPresentationContext = true
         
@@ -110,7 +110,12 @@ class MusicVideoTVC: UITableViewController {
     
     @IBAction func refresh(sender: UIRefreshControl) {
         refreshControl?.endRefreshing()
-        runAPI()
+        if resultSearchController.active{
+            refreshControl?.attributedTitle = NSAttributedString(string: "Cannot refresh while searching")
+        }else{
+            runAPI()
+        }
+        
     }
     
     func getAPIVideoCount(){
@@ -199,6 +204,21 @@ class MusicVideoTVC: UITableViewController {
             }
         }
     }
- 
+    
+    
+   
 
+    func filterSearch(searchText: String){
+        filteredArray = videos.filter{ videos  in
+            return videos.vArtist.lowercaseString.containsString(searchText.lowercaseString)
+        }
+        tableView.reloadData()
+    }
+}
+
+extension MusicVideoTVC : UISearchResultsUpdating {
+    func updateSearchResultsForSearchController(searchController: UISearchController) {
+        searchController.searchBar.text!.lowercaseString
+        filterSearch(searchController.searchBar.text!)
+    }
 }
