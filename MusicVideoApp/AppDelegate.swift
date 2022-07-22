@@ -8,16 +8,57 @@
 
 import UIKit
 
+
+var reachability: Reachability?
+var reachabilityStatus = " "
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    
+    var internetCheck: Reachability?
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
-       // NSURLCache.setSharedURLCache(NSURLCache (memoryCapacity: 0, diskCapacity: 0, diskPath: nil))
-        return true
+        // Override point for customization after application launch
+        
+        // Create a new observer for reachability changes
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(AppDelegate.reachabilityChanged(_:)), name: kReachabilityChangedNotification , object: nil)
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(AppDelegate.preferredFontChange), name: UIContentSizeCategoryDidChangeNotification , object: nil)
+        
+        // Register for changes in reachablity
+        internetCheck = Reachability.reachabilityForInternetConnection()
+        internetCheck?.startNotifier()
+        statusChangedForReachability(internetCheck!)
+        
+         return true
+    }
+    
+    func preferredFontChange() {
+        print("The preferred font changed")
+    }
+    
+    func reachabilityChanged(notification: NSNotification) {
+        reachability = notification.object as? Reachability
+        statusChangedForReachability(reachability!)
+    
+    }
+    
+    func statusChangedForReachability(currentReachabilityStatus: Reachability){
+        let networkStatus: NetworkStatus = currentReachabilityStatus.currentReachabilityStatus()
+        switch networkStatus.rawValue {
+        case NotReachable.rawValue:
+            reachabilityStatus = NOACESS
+        case ReachableViaWiFi.rawValue:
+            reachabilityStatus = WIFI
+        case ReachableViaWWAN.rawValue:
+            reachabilityStatus = WWAN
+        default:
+            return
+        }
+        NSNotificationCenter.defaultCenter().postNotificationName("ReachabilityStatus: ", object: nil)
     }
 
     func applicationWillResignActive(application: UIApplication) {
@@ -39,7 +80,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationWillTerminate(application: UIApplication) {
-        // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+        // Called when the application is about to terminate. Save data if appropriate. 
+        
+        // Removed observer for reachability
+        NSNotificationCenter.defaultCenter().removeObserver(self, name: kReachabilityChangedNotification, object: nil)
+        NSNotificationCenter.defaultCenter().removeObserver(self,name: UIContentSizeCategoryDidChangeNotification , object: nil)
     }
 
 
